@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<section class="container auth-card">
+  <h1><%= t.login %></h1>
+  <form action="/auth/login" method="post" class="stacked">
+    <label><%= t.email %>
+      <input type="email" name="email" required />
+    </label>
+    <label><%= t.password %>
+      <input type="password" name="password" required />
+    </label>
+    <button class="btn btn-primary btn-lg"><%= t.login %></button>
+    <p class="muted small">Hesabınız yoxdur? <a href="/auth/register"><%= t.register %></a></p>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
