@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<section class="container auth-card">
+  <h1><%= t.register %></h1>
+  <form action="/auth/register" method="post" class="stacked">
+    <div class="grid-2">
+      <label><%= t.firstname %>
+        <input type="text" name="firstname" required />
+      </label>
+      <label><%= t.lastname %>
+        <input type="text" name="lastname" required />
+      </label>
+    </div>
+    <label><%= t.email %>
+      <input type="email" name="email" required />
+    </label>
+    <label><%= t.phone %>
+      <input type="tel" name="phone" placeholder="+994 XX XXX XX XX" />
+    </label>
+    <label><%= t.password %>
+      <input type="password" name="password" minlength="6" required />
+      <small class="muted"><%= t.password_hint %></small>
+    </label>
+    <label><%= t.confirm_password %>
+      <input type="password" name="confirm_password" minlength="6" required />
+    </label>
+    <button class="btn btn-primary btn-lg"><%= t.register %></button>
+    <p class="muted small">Artıq hesabınız var? <a href="/auth/login"><%= t.login %></a></p>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
