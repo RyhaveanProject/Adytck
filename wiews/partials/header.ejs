@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> | ADY Ticket</title>
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="/">
+        <img src="/images/logo.svg" alt="ADY" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-line1">AZƏRBAYCAN DƏMİR YOLLARI</span>
+          <span class="brand-line2">AZERBAIJAN RAILWAYS</span>
+        </span>
+      </a>
+      <nav class="main-nav">
+        <a href="/" class="<%= active==='home'?'active':'' %>"><%= t.home %></a>
+        <a href="/ticket-search" class="<%= active==='tickets'?'active':'' %>"><%= t.tickets %></a>
+        <a href="/schedule" class="<%= active==='schedule'?'active':'' %>"><%= t.schedule %></a>
+        <a href="/tarifler-ve-odenis" class="<%= active==='info'?'active':'' %>"><%= t.tariffs %></a>
+        <a href="/news" class="<%= active==='news'?'active':'' %>"><%= t.news %></a>
+      </nav>
+      <div class="top-actions">
+        <div class="lang-switch">
+          <a href="?lang=az" class="<%= lang==='az'?'active':'' %>">AZ</a>
+          <a href="?lang=en" class="<%= lang==='en'?'active':'' %>">EN</a>
+          <a href="?lang=ru" class="<%= lang==='ru'?'active':'' %>">RU</a>
+        </div>
+        <% if (user) { %>
+          <a href="/profile" class="btn btn-light"><%= user.firstname %></a>
+          <form action="/auth/logout" method="post" class="inline">
+            <button type="submit" class="btn btn-ghost"><%= t.logout %></button>
+          </form>
+        <% } else { %>
+          <a href="/auth/login" class="btn btn-light"><%= t.login %></a>
+          <a href="/auth/register" class="btn btn-primary"><%= t.register %></a>
+        <% } %>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </header>
+  <% if (flash) { %>
+    <div class="flash flash-<%= flash.type %>"><%= flash.message %></div>
+  <% } %>
