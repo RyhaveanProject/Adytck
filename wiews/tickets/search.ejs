@@ -1,0 +1,45 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.tickets %></h1>
+  <p class="muted">Buradan istənilən marşrut üzrə bilet axtarışı edə bilərsiniz.</p>
+</section>
+
+<section class="container card-panel">
+  <form action="/ticket-search/results" method="get" class="quick-search vertical">
+    <label><%= t.from %>
+      <select name="from" required>
+        <option value="">--</option>
+        <% stations.forEach(function(s){ %>
+          <option value="<%= s.code %>"><%= s.name %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label><%= t.to %>
+      <select name="to" required>
+        <option value="">--</option>
+        <% stations.forEach(function(s){ %>
+          <option value="<%= s.code %>"><%= s.name %></option>
+        <% }) %>
+      </select>
+    </label>
+    <label><%= t.date %>
+      <input type="date" name="date" required />
+    </label>
+    <label><%= t.passengers %>
+      <select name="passengers">
+        <% for (var i=1; i<=6; i++) { %><option value="<%= i %>"><%= i %></option><% } %>
+      </select>
+    </label>
+    <button class="btn btn-primary btn-lg"><%= t.search %></button>
+  </form>
+</section>
+
+<section class="container hint-block">
+  <div class="hint">
+    <strong>Məsləhət:</strong> Axtarışdan sonra boş yerləri seçib, ödənişi kartla bitirə bilərsiniz.
+    <a href="/auth/register"><%= t.register %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

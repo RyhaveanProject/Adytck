@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1>Qatar #<%= train.no %> — <%= t.reserve_place %></h1>
+  <p class="muted"><%= fromStation.name %> → <%= toStation.name %> · <%= train.departure %>–<%= train.arrival %> · <%= date || 'bu gün' %></p>
+</section>
+
+<section class="container card-panel seat-grid">
+  <div class="seat-cabin">
+    <h4>Vaqon A1</h4>
+    <div class="cabin-grid">
+      <% for (var i=1; i<=20; i++) { %>
+        <label class="seat <%= (i % 7 === 0) ? 'seat-aisle' : '' %>">
+          <input type="radio" name="seat" value="<%= i %>" required />
+          <span><%= i %></span>
+        </label>
+      <% } %>
+    </div>
+  </div>
+  <aside class="buy-summary">
+    <h3>Sifariş</h3>
+    <ul class="kv">
+      <li><span><%= t.train %></span><strong>#<%= train.no %></strong></li>
+      <li><span><%= t.from %></span><strong><%= fromStation.name %></strong></li>
+      <li><span><%= t.to %></span><strong><%= toStation.name %></strong></li>
+      <li><span><%= t.date %></span><strong><%= date || 'bu gün' %></strong></li>
+      <li><span>Tip</span><strong><%= train.type %></strong></li>
+      <li><span>Vaqon</span><strong>A1</strong></li>
+      <li><span><%= t.price %></span><strong><%= train.price.toFixed(2) %> AZN</strong></li>
+    </ul>
+    <form action="/ticket/<%= train.no %>/buy" method="post">
+      <input type="hidden" name="date" value="<%= date %>" />
+      <input type="hidden" name="wagon" value="A1" />
+      <input type="hidden" name="seat" value="1" />
+      <button class="btn btn-primary btn-block btn-lg"><%= t.tickets %>: <%= train.price.toFixed(2) %> AZN</button>
+    </form>
+    <p class="muted small">Yer bron edildikdən sonra 15 dəq. ərzində ödəniş həyata keçirilməlidir.</p>
+  </aside>
+</section>
+
+<%- include('../partials/footer') %>

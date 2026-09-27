@@ -1,0 +1,46 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1>
+    <%= fromStation ? fromStation.name : query.from %>
+    →
+    <%= toStation ? toStation.name : query.to %>
+  </h1>
+  <p class="muted"><%= t.date %>: <%= query.date || 'bu gün' %> · <%= t.passengers %>: <%= query.passengers %></p>
+</section>
+
+<section class="container card-panel">
+  <% if (!trains.length) { %>
+    <p class="muted">Bu marşrut üzrə reys tapılmadı. <a href="/ticket-search"><%= t.search %></a></p>
+  <% } else { %>
+    <table class="results-table">
+      <thead>
+        <tr>
+          <th><%= t.train %></th>
+          <th><%= t.departure %></th>
+          <th><%= t.arrival %></th>
+          <th>Tip</th>
+          <th><%= t.price %> (AZN)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% trains.forEach(function(t){ %>
+          <tr>
+            <td><strong>#<%= t.no %></strong></td>
+            <td><%= t.departure %></td>
+            <td><%= t.arrival %></td>
+            <td><span class="tag"><%= t.type %></span></td>
+            <td><%= t.price.toFixed(2) %></td>
+            <td>
+              <a class="btn btn-primary btn-sm"
+                 href="/ticket/<%= t.no %>?date=<%= query.date %>&passengers=<%= query.passengers %>"><%= t.buy %></a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>
