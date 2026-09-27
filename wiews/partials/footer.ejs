@@ -1,0 +1,38 @@
+<footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="/images/logo.svg" alt="ADY" class="footer-logo" />
+        <p class="muted">© <%= new Date().getFullYear() %> Azərbaycan Dəmir Yolları — Online bilet platforması</p>
+      </div>
+      <div>
+        <h4><%= t.info %></h4>
+        <ul class="link-list">
+          <li><a href="/about"><%= t.about %></a></li>
+          <li><a href="/news"><%= t.news %></a></li>
+          <li><a href="/contact"><%= t.contact %></a></li>
+          <li><a href="/dasima-qaydalari/usaqlarla-seyahet"><%= t.children_travel %></a></li>
+          <li><a href="/dasima-qaydalari/el-yuklerinin-dasinmasi"><%= t.luggage %></a></li>
+          <li><a href="/dasima-qaydalari/heyvanlarin-dasinmasi"><%= t.pets %></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><%= t.tariffs %></h4>
+        <ul class="link-list">
+          <li><a href="/tarifler-ve-odenis/elektron-bilet">Elektron bilet</a></li>
+          <li><a href="/tarifler-ve-odenis/gedis-haqqinin-qaytarilmasi"><%= t.return_policy_title %></a></li>
+          <li><a href="/balance">Balansı artır</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><%= t.notice_title %></h4>
+        <form action="/subscribe" method="post" class="subscribe">
+          <input type="email" name="email" placeholder="<%= t.email_placeholder %>" required />
+          <button type="submit" class="btn btn-primary"><%= t.subscribe %></button>
+        </form>
+        <p class="muted small">7/24 dəstək: 1822 · elaqe@ady.az</p>
+      </div>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>
