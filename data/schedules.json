@@ -1,0 +1,40 @@
+{
+  "absheron_work": [
+    { "no": "6001", "Baku": "06:20", "Bilajari": "06:34", "Khirdalan": "06:41", "Sumgayit": "-" },
+    { "no": "6003", "Baku": "07:05", "Bilajari": "07:19", "Khirdalan": "07:27", "Sumgayit": "07:45" },
+    { "no": "6005", "Baku": "07:20", "Bilajari": "07:34", "Khirdalan": "07:42", "Sumgayit": "08:00" },
+    { "no": "6007", "Baku": "07:30", "Bilajari": "07:44", "Khirdalan": "07:51", "Sumgayit": "-" },
+    { "no": "6009", "Baku": "07:45", "Bilajari": "07:59", "Khirdalan": "08:06", "Sumgayit": "-" },
+    { "no": "6011", "Baku": "08:10", "Bilajari": "08:24", "Khirdalan": "08:31", "Sumgayit": "-" },
+    { "no": "6013", "Baku": "08:30", "Bilajari": "08:44", "Khirdalan": "08:52", "Sumgayit": "09:10" },
+    { "no": "6015", "Baku": "16:40", "Bilajari": "16:54", "Khirdalan": "17:01", "Sumgayit": "-" },
+    { "no": "6017", "Baku": "17:00", "Bilajari": "17:14", "Khirdalan": "17:22", "Sumgayit": "17:40" },
+    { "no": "6019", "Baku": "17:25", "Bilajari": "17:39", "Khirdalan": "17:47", "Sumgayit": "18:05" },
+    { "no": "6021", "Baku": "17:47", "Bilajari": "18:01", "Khirdalan": "18:08", "Sumgayit": "-" },
+    { "no": "6059", "Baku": "18:10", "Bilajari": "18:28", "Khirdalan": "18:39", "Sumgayit": "18:58" },
+    { "no": "6023", "Baku": "18:25", "Bilajari": "18:39", "Khirdalan": "18:47", "Sumgayit": "19:05" },
+    { "no": "6025", "Baku": "18:35", "Bilajari": "18:49", "Khirdalan": "18:57", "Sumgayit": "19:15" },
+    { "no": "6027", "Baku": "18:45", "Bilajari": "18:59", "Khirdalan": "19:07", "Sumgayit": "19:25" },
+    { "no": "6029", "Baku": "18:55", "Bilajari": "19:09", "Khirdalan": "19:16", "Sumgayit": "-" },
+    { "no": "6061", "Baku": "19:15", "Bilajari": "19:33", "Khirdalan": "19:44", "Sumgayit": "20:03" },
+    { "no": "6031", "Baku": "19:40", "Bilajari": "19:54", "Khirdalan": "20:02", "Sumgayit": "20:20" },
+    { "no": "6033", "Baku": "20:20", "Bilajari": "20:34", "Khirdalan": "20:42", "Sumgayit": "21:00" }
+  ],
+  "domestic_work": [
+    { "no": "732", "Baku": "08:00", "Bilajari": "08:16", "Ucar": "10:42", "Lki": "10:56", "Yevlakh": "11:12", "Goran": "11:29", "Ganja": "11:59", "Deller": "12:23", "Govlar": "12:43", "Tovuz": "12:58", "Aghstafa": "13:19", "Gazakh": "13:36" },
+    { "no": "72",  "Baku": "09:15", "Bilajari": "09:34", "Ucar": "12:42", "Lki": "12:56", "Yevlakh": "13:19", "Goran": "13:41", "Ganja": "14:21", "Deller": "14:49", "Govlar": "15:14", "Tovuz": "15:32", "Aghstafa": "15:53", "Gazakh": "-" },
+    { "no": "734", "Baku": "18:00", "Bilajari": "18:16", "Ucar": "20:42", "Lki": "20:56", "Yevlakh": "21:12", "Goran": "21:29", "Ganja": "21:59", "Deller": "22:23", "Govlar": "22:43", "Tovuz": "22:58", "Aghstafa": "23:19", "Gazakh": "23:36" }
+  ],
+  "trains": [
+    { "no": "6001", "from": "BAK", "to": "SUM", "departure": "06:20", "arrival": "07:45", "price": 1.50, "type": "Absheron" },
+    { "no": "6013", "from": "BAK", "to": "SUM", "departure": "08:30", "arrival": "09:10", "price": 1.50, "type": "Absheron" },
+    { "no": "732",  "from": "BAK", "to": "GZX", "departure": "08:00", "arrival": "13:36", "price": 8.00, "type": "High-speed" },
+    { "no": "72",   "from": "BAK", "to": "AGS", "departure": "09:15", "arrival": "15:53", "price": 7.00, "type": "Intercity" },
+    { "no": "734",  "from": "BAK", "to": "GZX", "departure": "18:00", "arrival": "23:36", "price": 8.00, "type": "High-speed" },
+    { "no": "6025", "from": "BAK", "to": "SUM", "departure": "18:35", "arrival": "19:15", "price": 1.50, "type": "Absheron" },
+    { "no": "6033", "from": "BAK", "to": "SUM", "departure": "20:20", "arrival": "21:00", "price": 1.50, "type": "Absheron" },
+    { "no": "7002", "from": "BAK", "to": "GAB", "departure": "08:30", "arrival": "12:30", "price": 9.50, "type": "Intercity" },
+    { "no": "7004", "from": "BAK", "to": "SHE", "departure": "10:00", "arrival": "14:20", "price": 10.00, "type": "Intercity" },
+    { "no": "7006", "from": "BAK", "to": "NXT", "departure": "22:00", "arrival": "09:30", "price": 25.00, "type": "International" }
+  ]
+}

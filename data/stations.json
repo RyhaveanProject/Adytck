@@ -1,0 +1,24 @@
+{
+  "stations": [
+    { "code": "BAK", "name": "Baku", "name_az": "Bakı", "name_en": "Baku", "name_ru": "Баку" },
+    { "code": "BIL", "name": "Bilajari", "name_az": "Biləcəri", "name_en": "Bilajari", "name_ru": "Биляджары" },
+    { "code": "XIR", "name": "Khirdalan", "name_az": "Xırdalan", "name_en": "Khirdalan", "name_ru": "Хырдалан" },
+    { "code": "SUM", "name": "Sumgayit", "name_az": "Sumqayıt", "name_en": "Sumgayit", "name_ru": "Сумгайыт" },
+    { "code": "GNC", "name": "Ganja", "name_az": "Gəncə", "name_en": "Ganja", "name_ru": "Гянджа" },
+    { "code": "YEV", "name": "Yevlakh", "name_az": "Yevlax", "name_en": "Yevlakh", "name_ru": "Евлах" },
+    { "code": "UCR", "name": "Ucar", "name_az": "Ucar", "name_en": "Ucar", "name_ru": "Уджар" },
+    { "code": "LKI", "name": "Lki", "name_az": "Ləki", "name_en": "Lki", "name_ru": "Ляки" },
+    { "code": "GOR", "name": "Goran", "name_az": "Goran", "name_en": "Goran", "name_ru": "Горан" },
+    { "code": "DEL", "name": "Deller", "name_az": "Dəllər", "name_en": "Deller", "name_ru": "Дёлляр" },
+    { "code": "GOV", "name": "Govlar", "name_az": "Qovlar", "name_en": "Govlar", "name_ru": "Ковлар" },
+    { "code": "TOV", "name": "Tovuz", "name_az": "Tovuz", "name_en": "Tovuz", "name_ru": "Товуз" },
+    { "code": "AGS", "name": "Aghstafa", "name_az": "Ağstafa", "name_en": "Aghstafa", "name_ru": "Агстафа" },
+    { "code": "GZX", "name": "Gazakh", "name_az": "Qazax", "name_en": "Gazakh", "name_ru": "Газах" },
+    { "code": "GAB", "name": "Gabala", "name_az": "Qəbələ", "name_en": "Gabala", "name_ru": "Габала" },
+    { "code": "SHE", "name": "Sheki", "name_az": "Şəki", "name_en": "Sheki", "name_ru": "Шеки" },
+    { "code": "LER", "name": "Lerik", "name_az": "Lerik", "name_en": "Lerik", "name_ru": "Лярик" },
+    { "code": "BAL", "name": "Balakan", "name_az": " Balakən", "name_en": "Balakan", "name_ru": "Балакен" },
+    { "code": "NXT", "name": "Nakhchivan", "name_az": "Naxçıvan", "name_en": "Nakhchivan", "name_ru": "Нахичевань" },
+    { "code": "GAN", "name": "Ganja International", "name_az": "Gəncə Beynəlxalq", "name_en": "Ganja Intl.", "name_ru": "Гянджа Международная" }
+  ]
+}
