@@ -1,0 +1,60 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.schedule %></h1>
+  <p class="muted">Abşeron və daxili istiqamətlər üzrə mövcud reyslərin hərəkət cədvəli.</p>
+</section>
+
+<section class="container">
+  <div class="tabs">
+    <a class="tab <%= tab==='absheron'?'active':'' %>" href="/schedule"><%= t.work_days %>: Absheron</a>
+    <a class="tab <%= tab==='domestic'?'active':'' %>" href="/schedule?type=domestic"><%= t.work_days %>: <%= t.directions %></a>
+  </div>
+  <div class="table-wrap">
+    <% if (tab === 'absheron') { %>
+      <table class="schedule-table">
+        <thead>
+          <tr><th>Stansiya</th><th>Baku</th><th>Bilajari</th><th>Khirdalan</th><th>Sumgayit</th></tr>
+        </thead>
+        <tbody>
+          <% schedules.absheron_work.forEach(function(r){ %>
+            <tr>
+              <td><strong>#<%= r.no %></strong></td>
+              <td><%= r.Baku %></td>
+              <td><%= r.Bilajari %></td>
+              <td><%= r.Khirdalan %></td>
+              <td><%= r.Sumgayit %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <table class="schedule-table">
+        <thead>
+          <tr><th>#</th><th>Baku</th><th>Bilajari</th><th>Ucar</th><th>Lki</th><th>Yevlakh</th><th>Goran</th><th>Ganja</th><th>Deller</th><th>Govlar</th><th>Tovuz</th><th>Aghstafa</th><th>Gazakh</th></tr>
+        </thead>
+        <tbody>
+          <% schedules.domestic_work.forEach(function(r){ %>
+            <tr>
+              <td><strong><%= r.no %></strong></td>
+              <td><%= r.Baku %></td>
+              <td><%= r.Bilajari %></td>
+              <td><%= r.Ucar %></td>
+              <td><%= r.Lki %></td>
+              <td><%= r.Yevlakh %></td>
+              <td><%= r.Goran %></td>
+              <td><%= r.Ganja %></td>
+              <td><%= r.Deller %></td>
+              <td><%= r.Govlar %></td>
+              <td><%= r.Tovuz %></td>
+              <td><%= r.Aghstafa %></td>
+              <td><%= r.Gazakh %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
