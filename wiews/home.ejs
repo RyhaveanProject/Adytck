@@ -1,0 +1,150 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-caption">
+      <h1>Abşeron xəttinin və daxili istiqamətlərin hərəkət cədvəli</h1>
+      <p class="muted">Bakı — Sumqayıt, Bakı — Qazax və digər istiqamətlər üzrə mövcud reyslər. Biletinizi bir neçə kliklə sifariş edin.</p>
+      <div class="hero-cta">
+        <a href="/ticket-search" class="btn btn-primary btn-lg"><%= t.buy %></a>
+        <a href="/schedule" class="btn btn-ghost btn-lg"><%= t.show_schedule %></a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Onlayn bilet</div>
+      <form action="/ticket-search/results" method="get" class="quick-search">
+        <label><%= t.from %>
+          <select name="from">
+            <% stations.forEach(function(s){ %>
+              <option value="<%= s.code %>"><%= s.name %></option>
+            <% }) %>
+          </select>
+        </label>
+        <label><%= t.to %>
+          <select name="to">
+            <% stations.forEach(function(s){ %>
+              <option value="<%= s.code %>"><%= s.name %></option>
+            <% }) %>
+          </select>
+        </label>
+        <label><%= t.date %>
+          <input type="date" name="date" />
+        </label>
+        <label><%= t.passengers %>
+          <select name="passengers">
+            <% for (var i=1; i<=6; i++) { %><option value="<%= i %>"><%= i %></option><% } %>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary btn-block"><%= t.search %></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="notice container">
+  <div class="notice-banner">
+    Ağstafa istiqaməti <strong>15 iyuldan</strong> Qazaxa qədər uzadılıb. Biletlər satışdadır!
+    <a class="link-arrow" href="/ticket-search"><%= t.buy %></a>
+  </div>
+</section>
+
+<section class="info-blocks container">
+  <a class="info-card" href="/popular-directions">
+    <div class="info-card-illu ic-1"></div>
+    <div class="info-card-body">
+      <h3><%= t.popular_directions %></h3>
+      <p>ADY ilə Azərbaycanı kəşf et.</p>
+      <span class="link-arrow"><%= t.more %></span>
+    </div>
+  </a>
+  <a class="info-card" href="/dasima-qaydalari/usaqlarla-seyahet">
+    <div class="info-card-illu ic-2"></div>
+    <div class="info-card-body">
+      <h3><%= t.children_travel %></h3>
+      <p>Uşaqların qatarla səyahət etməsi üçün qaydalar.</p>
+      <span class="link-arrow"><%= t.more %></span>
+    </div>
+  </a>
+  <a class="info-card" href="/balance">
+    <div class="info-card-illu ic-3"></div>
+    <div class="info-card-body">
+      <h3><%= t.balance %></h3>
+      <p>Vaxta qənaət üçün balansını indi artır.</p>
+      <span class="link-arrow"><%= t.balance_add %></span>
+    </div>
+  </a>
+  <a class="info-card" href="/dasima-qaydalari/el-yuklerinin-dasinmasi">
+    <div class="info-card-illu ic-4"></div>
+    <div class="info-card-body">
+      <h3><%= t.luggage %></h3>
+      <p>Qatarda əl yüklərinin daşınması qaydaları.</p>
+      <span class="link-arrow"><%= t.more %></span>
+    </div>
+  </a>
+  <a class="info-card" href="/dasima-qaydalari/heyvanlarin-dasinmasi">
+    <div class="info-card-illu ic-5"></div>
+    <div class="info-card-body">
+      <h3><%= t.pets %></h3>
+      <p>Sərnişin qatarında heyvanların daşınması qaydaları.</p>
+      <span class="link-arrow"><%= t.more %></span>
+    </div>
+  </a>
+</section>
+
+<section class="schedule-preview container">
+  <h2>Abşeron istiqaməti — iş günləri (seçilmiş reyslər)</h2>
+  <div class="tabs">
+    <a class="tab active" href="/schedule">İş günləri</a>
+    <a class="tab" href="/schedule?type=domestic">Daxili istiqamətlər</a>
+  </div>
+  <div class="table-wrap">
+    <table class="schedule-table">
+      <thead>
+        <tr><th>#</th><th>Baku</th><th>Bilajari</th><th>Khirdalan</th><th>Sumgayit</th></tr>
+      </thead>
+      <tbody>
+        <% schedules.absheron_work.slice(0, 8).forEach(function(r){ %>
+          <tr>
+            <td><strong><%= r.no %></strong></td>
+            <td><%= r.Baku %></td>
+            <td><%= r.Bilajari %></td>
+            <td><%= r.Khirdalan %></td>
+            <td><%= r.Sumgayit %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="news container">
+  <h2><%= t.news %></h2>
+  <div class="news-grid">
+    <article class="news-card">
+      <div class="news-img news-img-1"></div>
+      <div class="news-body">
+        <h3><%= t.news_1_title %></h3>
+        <p><%= t.news_1_text %></p>
+        <a href="/news" class="link-arrow"><%= t.more %></a>
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news-img news-img-2"></div>
+      <div class="news-body">
+        <h3><%= t.news_2_title %></h3>
+        <p><%= t.news_2_text %></p>
+        <a href="/news" class="link-arrow"><%= t.more %></a>
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news-img news-img-3"></div>
+      <div class="news-body">
+        <h3><%= t.news_3_title %></h3>
+        <p><%= t.news_3_text %></p>
+        <a href="/news" class="link-arrow"><%= t.more %></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
