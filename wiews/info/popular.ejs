@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.popular_directions %></h1>
+  <p class="muted">Ən çox sifariş edilən istiqamətlər və yaşayış məntəqələri.</p>
+</section>
+
+<section class="container card-panel">
+  <div class="popular-grid">
+    <% stations.slice(0, 12).forEach(function(s){ %>
+      <a class="popular-card" href="/ticket-search/results?from=BAK&to=<%= s.code %>">
+        <div class="popular-icon">🚆</div>
+        <div>
+          <strong><%= s.name %></strong>
+          <div class="muted small">Bakıdan — sifariş et</div>
+        </div>
+      </a>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

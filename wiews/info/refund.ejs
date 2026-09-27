@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.return_policy_title %></h1>
+</section>
+
+<section class="container card-panel content-doc">
+  <p><%= t.return_policy_text %></p>
+  <table class="schedule-table">
+    <thead><tr><th>Geri qaytarma müddəti</th><th>Faiz</th></tr></thead>
+    <tbody>
+      <tr><td>24 saat və daha əvvəl</td><td>50%</td></tr>
+      <tr><td>24 saatdan az</td><td>—</td></tr>
+      <tr><td>Qatardan sonra</td><td>—</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<%- include('../partials/footer') %>
