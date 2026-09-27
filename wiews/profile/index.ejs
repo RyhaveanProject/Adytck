@@ -1,0 +1,62 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.profile %></h1>
+  <p class="muted"><%= t.welcome %>, <strong><%= user.firstname %> <%= user.lastname %></strong> · <%= user.email %></p>
+</section>
+
+<section class="container profile-grid">
+  <div class="card-panel">
+    <h2><%= t.my_tickets %></h2>
+    <% if (!orders.length) { %>
+      <p class="muted"><%= t.tickets %>: <a href="/ticket-search"><%= t.search %></a></p>
+    <% } else { %>
+      <table class="orders-table">
+        <thead><tr><th>#</th><th><%= t.train %></th><th><%= t.from %> → <%= t.to %></th><th><%= t.date %></th><th><%= t.seat %></th><th><%= t.price %></th><th>Status</th></tr></thead>
+        <tbody>
+          <% orders.forEach(function(o){ %>
+            <tr>
+              <td><%= o.id.slice(-6) %></td>
+              <td><%= o.trainNo %></td>
+              <td><%= o.fromName %> → <%= o.toName %></td>
+              <td><%= o.date %></td>
+              <td><%= o.wagon %>-<%= o.seat %></td>
+              <td><%= o.price.toFixed(2) %> AZN</td>
+              <td>
+                <% if (o.status === 'paid') { %>
+                  <span class="status ok">Ödənilib</span>
+                <% } else { %>
+                  <span class="status pending">Ödəniş gözləyir</span>
+                  <a class="btn btn-primary btn-sm" href="/payment/<%= o.id %>"><%= t.pay %></a>
+                <% } %>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+
+  <div class="card-panel">
+    <h2>Şəxsi məlumat</h2>
+    <ul class="kv">
+      <li><span><%= t.firstname %></span><strong><%= user.firstname %></strong></li>
+      <li><span><%= t.lastname %></span><strong><%= user.lastname %></strong></li>
+      <li><span><%= t.email %></span><strong><%= user.email %></strong></li>
+      <li><span><%= t.phone %></span><strong><%= user.phone || '—' %></strong></li>
+    </ul>
+    <h3>Kartlarım</h3>
+    <% if (!cards.length) { %>
+      <p class="muted">Hələ kart əlavə olunmayıb.</p>
+    <% } else { %>
+      <ul class="card-list">
+        <% cards.forEach(function(c){ %>
+          <li>•••• <%= c.last4 %> · <%= c.holder %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+    <a class="btn btn-light" href="/balance"><%= t.balance_add %></a>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
