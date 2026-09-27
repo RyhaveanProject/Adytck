@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.payment %></h1>
+  <p class="muted">Sifariş #<%= order.id.slice(-6) %></p>
+</section>
+
+<section class="container payment-grid">
+  <div class="card-panel">
+    <h3>Kart ilə ödəniş</h3>
+    <form action="/payment/<%= order.id %>" method="post" class="stacked">
+      <label><%= t.card_number %>
+        <input type="text" name="card_number" placeholder="0000 0000 0000 0000" maxlength="19" required />
+      </label>
+      <label><%= t.card_holder %>
+        <input type="text" name="card_holder" required />
+      </label>
+      <div class="grid-2">
+        <label><%= t.expiry %>
+          <input type="text" name="expiry" placeholder="MM/YY" required />
+        </label>
+        <label><%= t.cvv %>
+          <input type="text" name="cvv" maxlength="3" required />
+        </label>
+      </div>
+      <button class="btn btn-primary btn-lg"><%= t.pay %> — <%= order.price.toFixed(2) %> AZN</button>
+      <p class="muted small">Bu demo versiyada kart məlumatları <strong>local JSON faylına</strong> (mask şəklində) yazılır və ödəniş təsdiqlənir.</p>
+    </form>
+  </div>
+  <aside class="card-panel">
+    <h3>Sifariş xülasəsi</h3>
+    <ul class="kv">
+      <li><span><%= t.train %></span><strong>#<%= order.trainNo %></strong></li>
+      <li><span><%= t.from %></span><strong><%= from.name %></strong></li>
+      <li><span><%= t.to %></span><strong><%= to.name %></strong></li>
+      <li><span><%= t.date %></span><strong><%= order.date %></strong></li>
+      <li><span>Vaqon/Yer</span><strong><%= order.wagon %>-<%= order.seat %></strong></li>
+      <li><span><%= t.price %></span><strong><%= order.price.toFixed(2) %> AZN</strong></li>
+    </ul>
+  </aside>
+</section>
+
+<%- include('../partials/footer') %>

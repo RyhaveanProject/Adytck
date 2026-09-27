@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+
+<section class="container receipt">
+  <div class="receipt-mark">✓</div>
+  <h1><%= t.payment_success %></h1>
+  <p class="muted">Sifariş #<%= order.id.slice(-6) %></p>
+  <div class="card-panel">
+    <ul class="kv">
+      <li><span><%= t.train %></span><strong>#<%= order.trainNo %></strong></li>
+      <li><span><%= t.from %></span><strong><%= from.name %></strong></li>
+      <li><span><%= t.to %></span><strong><%= to.name %></strong></li>
+      <li><span><%= t.date %></span><strong><%= order.date %></strong></li>
+      <li><span>Vaqon</span><strong><%= order.wagon %></strong></li>
+      <li><span><%= t.seat %></span><strong><%= order.seat %></strong></li>
+      <li><span><%= t.price %></span><strong><%= order.price.toFixed(2) %> AZN</strong></li>
+      <li><span>Status</span><strong class="ok-text">Ödənildi</strong></li>
+    </ul>
+  </div>
+  <a href="/profile" class="btn btn-primary btn-lg">Profilə keç</a>
+  <a href="/ticket-search" class="btn btn-ghost btn-lg">Yeni bilet</a>
+</section>
+
+<%- include('../partials/footer') %>

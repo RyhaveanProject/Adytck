@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<section class="page-head container">
+  <h1><%= t.balance %></h1>
+  <p class="muted">Fiziki kart və ya istifadəçi balansını artırın.</p>
+</section>
+
+<section class="container card-panel balance">
+  <form action="/balance" method="post" class="stacked">
+    <label><%= t.amount %>
+      <input type="number" name="amount" min="1" step="0.5" value="10" required />
+    </label>
+    <label>Ödəniş kartı (demo)
+      <input type="text" name="card" placeholder="0000 0000 0000 0000" required />
+    </label>
+    <button class="btn btn-primary btn-lg"><%= t.balance_add %></button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
