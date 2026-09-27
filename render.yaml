@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ady-ticket-clone
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "18.20.2"
+      - key: SESSION_SECRET
+        generateValue: true
+    autoDeploy: true

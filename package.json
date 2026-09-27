@@ -1,0 +1,22 @@
+{
+  "name": "ady-ticket-clone",
+  "version": "1.0.0",
+  "description": "ADY ticket.ady.az clone - full-functional ticket booking system on Render free tier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "ejs": "^3.1.10",
+    "body-parser": "^1.20.3",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "method-override": "^3.0.0"
+  }
+}
